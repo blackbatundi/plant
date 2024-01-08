@@ -1,4 +1,5 @@
 import 'package:flow_projet/app/start/shared/utils/style.dart';
+import 'package:flow_projet/app/views/home/app_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:animate_do/animate_do.dart';
@@ -16,7 +17,7 @@ class _StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
-        systemNavigationBarColor: AppColors.TRANSPARENT,
+        systemNavigationBarColor: AppColors.SCAFFOLD_BACKGROUND_LIGHT,
         systemNavigationBarIconBrightness: Brightness.dark,
         statusBarColor: AppColors.TRANSPARENT,
         statusBarIconBrightness: Brightness.light,
@@ -44,7 +45,7 @@ class _StartPageState extends State<StartPage> {
                           colorText: AppColors.PRIMARY_COLOR_DARK,
                           title: "Join us.",
                           onTap: () {
-                            //  Navigator.pushNamed(context, Signup.routeName);
+                            Navigator.pushNamed(context, AppHome.routeName);
                           }),
                     ],
                   ),
