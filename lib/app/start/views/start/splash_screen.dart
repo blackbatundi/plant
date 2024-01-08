@@ -96,15 +96,15 @@ class _SplashScreenState extends State<SplashScreen> {
 //here is our slogant
 
   Widget appName() {
-    return Text.rich(
+    return const Text.rich(
       TextSpan(
-        text: "Trans ",
+        text: "Plant ",
         style: TextStyle(
           fontSize: 24,
-          color: Theme.of(context).primaryColor,
+          color: AppColors.PRIMARY_COLOR_DARK,
           fontWeight: FontWeight.bold,
         ),
-        children: const <TextSpan>[
+        children: <TextSpan>[
           TextSpan(
             text: "App",
             style: TextStyle(
@@ -124,7 +124,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return const Padding(
       padding: EdgeInsets.only(top: 10),
       child: Text(
-        "Payez vos transport en toute securite",
+        "The protection of nature is our priority",
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.white,

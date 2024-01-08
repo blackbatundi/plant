@@ -20,21 +20,13 @@ class _AnouncePageState extends State<AnouncePage> {
   List<Map<String, dynamic>> starts = [
     {
       "image": "assets/svg/1.svg",
-      "title": "Find the person to deliver your goods",
-      "subtitle":
-          "I guess you  need  someone to delive your goods, just open delivery App and find the solution to your problem",
+      "title": "Find the resultat of the disease of the plant",
+      "subtitle": "lormpusm",
     },
     {
       "image": "assets/svg/2.svg",
-      "title": "Consult your courier in the app",
-      "subtitle":
-          "I guess you are hangry and need to eat something, just open Meal monkey and find what to eat",
-    },
-    {
-      "image": "assets/svg/3.svg",
-      "title": "Get your goods wherever you are",
-      "subtitle":
-          "I guess you are hangry and need to eat something, just open Meal monkey and find what to eat",
+      "title": "Consult the historic of disease in the app",
+      "subtitle": "lormpusm",
     },
   ];
 
@@ -51,9 +43,6 @@ class _AnouncePageState extends State<AnouncePage> {
           } else if (_pageViewController!.page! >= 1 &&
               _pageViewController!.page! < 2) {
             indexPage = 1;
-          } else if (_pageViewController!.page! >= 2 &&
-              _pageViewController!.page! < 3) {
-            indexPage = 2;
           }
         });
       });
@@ -78,7 +67,7 @@ class _AnouncePageState extends State<AnouncePage> {
                   physics: const BouncingScrollPhysics(),
                   controller: _pageViewController,
                   children: List.generate(
-                    3,
+                    2,
                     (index) => contents(
                         image: starts[index]['image'],
                         indexPage: index,
@@ -93,7 +82,7 @@ class _AnouncePageState extends State<AnouncePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
-                  3,
+                  2,
                   (index) => Container(
                     margin: const EdgeInsets.symmetric(horizontal: 5),
                     height: 10,

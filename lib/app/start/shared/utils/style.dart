@@ -56,7 +56,7 @@ class AppColors {
   static const ON_CONTAINER_COLOR = Color(0xFFe8f0f0);
   static const BOXSHADOW = Color(0xFFd0d1ce);
 
-  static const Color PRIMARY_COLOR_DARK = Color.fromARGB(255, 100, 123, 227);
+  static const Color PRIMARY_COLOR_DARK = Color(0xFF12584D);
 }
 
 class OnHoverEffect extends StatefulWidget {
