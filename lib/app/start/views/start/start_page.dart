@@ -40,19 +40,9 @@ class _StartPageState extends State<StartPage> {
                       slogant(),
                       message(),
                       custormButtom(
-                          color: AppColors.PRIMARY_COLOR_DARK,
-                          colorText: Colors.white,
-                          title: "Rejoindrez-Nous",
-                          onTap: () {
-                            // Navigator.pushNamed(context, Login.routeName);
-                          }),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      custormButtom(
                           color: Colors.white,
                           colorText: AppColors.PRIMARY_COLOR_DARK,
-                          title: "Creez un Compte",
+                          title: "Join us.",
                           onTap: () {
                             //  Navigator.pushNamed(context, Signup.routeName);
                           }),
@@ -162,7 +152,7 @@ class _StartPageState extends State<StartPage> {
   Widget appName() {
     return const Text.rich(
       TextSpan(
-        text: "Trans ",
+        text: "Plant ",
         style: TextStyle(
           fontSize: 24,
           color: AppColors.PRIMARY_COLOR_DARK,
@@ -188,7 +178,7 @@ class _StartPageState extends State<StartPage> {
     return const Padding(
       padding: EdgeInsets.only(top: 10),
       child: Text(
-        "Payez vos transport en toute securite",
+        "The protection of nature is our priority",
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.black,
@@ -202,7 +192,7 @@ class _StartPageState extends State<StartPage> {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 50),
       child: Text(
-        "Pour beneficie totalement aux pontentiels offert par Trans App, rejoinez-nous",
+        "To fully benefit from the potential offered by Plant App, join us.",
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.black,

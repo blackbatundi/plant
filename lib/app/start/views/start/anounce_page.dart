@@ -104,7 +104,7 @@ class _AnouncePageState extends State<AnouncePage> {
                 padding: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
                 child: custormButtom(
                     color: AppColors.PRIMARY_COLOR_DARK,
-                    title: "Start",
+                    title: "Next",
                     colorText: Colors.white,
                     onTap: () {
                       Navigator.pushNamed(context, StartPage.routeName);
