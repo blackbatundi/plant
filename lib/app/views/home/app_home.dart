@@ -36,17 +36,19 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
       ),
       child: SafeArea(
         child: Scaffold(
-          body: Stack(
+          body: Column(
             children: [
-              TabBarView(
-                physics: const NeverScrollableScrollPhysics(),
-                controller: _tabController,
-                children: [
-                  TensorFlowTest(), //hidtoric
-                  Container(), //home
-                  Container(),
-                  // profil
-                ],
+              Expanded(
+                child: TabBarView(
+                  physics: const NeverScrollableScrollPhysics(),
+                  controller: _tabController,
+                  children: [
+                    TensorFlowTest(), //hidtoric
+                    Container(), //home
+                    Container(),
+                    // profil
+                  ],
+                ),
               ),
               Align(
                 alignment: Alignment.bottomCenter,
@@ -61,11 +63,11 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
 
   Widget bottomNavigation() {
     return SizedBox(
-      height: 150,
+      height: 110,
       child: Stack(
         children: [
           Container(
-            margin: const EdgeInsets.only(top: 75),
+            margin: const EdgeInsets.only(top: 30),
             padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               color: AppColors.SCAFFOLD_BACKGROUND_LIGHT,
@@ -100,7 +102,7 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
           ),
           Positioned(
             left: MediaQuery.of(context).size.width / 2 - 50,
-            top: 20,
+            top: -15,
             child: InkWell(
               onTap: () {
                 setState(() {
