@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -17,6 +16,7 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
   late List _results;
   double maximum = 0;
   bool imageSelect = false;
+  List result = [];
 
   @override
   void initState() {
@@ -26,12 +26,10 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
 
   Future loadModel() async {
     Tflite.close();
-    String res;
-    res = (await Tflite.loadModel(
+    await Tflite.loadModel(
       model: "assets/model/model.tflite",
       labels: "assets/model/labels.txt",
-    ))!;
-    print("Models loading status: $res");
+    );
   }
 
   Future imageClassification(File image) async {
@@ -48,6 +46,7 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
       imageSelect = true;
       maximum = _results.reduce((acc, map) =>
           acc["confidence"] > map["confidence"] ? acc : map)["confidence"];
+      result = _results.where((map) => map["confidence"] == maximum).toList();
     });
   }
 
@@ -70,28 +69,24 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                     ),
                   ),
                 ),
-          SingleChildScrollView(
-              child: Column(
-            children: imageSelect
-                ? List.generate(
-                    _results.length,
-                    (index) => maximum == _results[index]['confidence']
-                        ? Card(
-                            child: Container(
-                              margin: const EdgeInsets.all(10),
-                              child: Text(
-                                "${_results[index]['label']} : ${_results[index]['confidence'].toStringAsFixed(2)}",
-                                style: const TextStyle(
-                                  color: Colors.red,
-                                  fontSize: 20,
-                                ),
-                              ),
-                            ),
-                          )
-                        : const SizedBox.shrink(),
-                  )
-                : [],
-          ))
+          imageSelect
+              ? Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Card(
+                    child: Container(
+                      // margin: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        "${result[0]['label']} : ${result[0]['confidence'].toStringAsFixed(2)}",
+                        style: const TextStyle(
+                          color: Colors.red,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              : const SizedBox.shrink(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
