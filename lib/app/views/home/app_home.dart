@@ -1,4 +1,5 @@
 import 'package:flow_projet/app/start/shared/utils/style.dart';
+import 'package:flow_projet/app/views/scanner_plant/tensorflow_teste.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:iconsax/iconsax.dart';
@@ -41,7 +42,7 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
                 physics: const NeverScrollableScrollPhysics(),
                 controller: _tabController,
                 children: [
-                  Container(), //hidtoric
+                  TensorFlowTest(), //hidtoric
                   Container(), //home
                   Container(),
                   // profil
