@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite_v2/tflite_v2.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class TensorFlowTest extends StatefulWidget {
   const TensorFlowTest({super.key});
@@ -58,7 +59,12 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
           imageSelect
               ? Container(
                   margin: const EdgeInsets.all(10),
-                  child: Image.file(_image),
+                  child: Image.file(
+                    _image,
+                    fit: BoxFit.cover,
+                    width: MediaQuery.of(context).size.width,
+                    height: 400,
+                  ),
                 )
               : Container(
                   margin: const EdgeInsets.all(10),
@@ -89,10 +95,22 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
               : const SizedBox.shrink(),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: pickImage,
-        tooltip: "prendre une image",
-        child: const Icon(Icons.image_search),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          if (imageSelect)
+            FloatingActionButton(
+              onPressed: () {},
+              tooltip: "rechercher les maladie",
+              child: const Icon(Icons.search),
+            ),
+          10.heightBox,
+          FloatingActionButton(
+            onPressed: pickImage,
+            tooltip: "prendre une image",
+            child: const Icon(Icons.add_a_photo),
+          ),
+        ],
       ),
     );
   }
@@ -102,7 +120,9 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
     final XFile? pickedFile = await picker.pickImage(
       source: ImageSource.gallery,
     );
-    File image = File(pickedFile!.path);
-    imageClassification(image);
+    if (pickedFile != null) {
+      File image = File(pickedFile.path);
+      imageClassification(image);
+    }
   }
 }
