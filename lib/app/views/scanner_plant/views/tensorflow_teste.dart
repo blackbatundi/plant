@@ -98,7 +98,7 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                   ),
                 )
               : const SizedBox.shrink(),
-          imageSelect
+          imageSelect && planteModels.isNotEmpty
               ? Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Column(
@@ -133,6 +133,9 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                                       ),
                                     ],
                                   ),
+                                  Text(
+                                    "${planteModels[0]['maladies'][index]['description']}",
+                                  ),
                                   10.heightBox,
                                   const Text(
                                     "Symptomes",
@@ -166,6 +169,47 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                                                   5.widthBox,
                                                   Text(
                                                       "${planteModels[0]['maladies'][index]['symptomes'][ind]}"),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        10.heightBox,
+                                      ],
+                                    ),
+                                  ),
+                                  const Text(
+                                    "Preventions",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  10.heightBox,
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 25),
+                                    child: Column(
+                                      children: [
+                                        ...List.generate(
+                                          planteModels[0]['maladies'][index]
+                                                  ['prevention']
+                                              .length,
+                                          (ind) => Column(
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Container(
+                                                    padding:
+                                                        const EdgeInsets.all(3),
+                                                    decoration:
+                                                        const BoxDecoration(
+                                                      color: Colors.yellow,
+                                                      shape: BoxShape.circle,
+                                                    ),
+                                                  ),
+                                                  5.widthBox,
+                                                  Text(
+                                                      "${planteModels[0]['maladies'][index]['prevention'][ind]}"),
                                                 ],
                                               ),
                                             ],
