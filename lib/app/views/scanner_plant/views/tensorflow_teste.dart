@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flow_projet/app/views/scanner_plant/data_local/data.dart';
+import 'package:flow_projet/app/views/scanner_plant/views/pop_up/pick_image.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite_v2/tflite_v2.dart';
@@ -167,8 +168,10 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                                                     ),
                                                   ),
                                                   5.widthBox,
-                                                  Text(
-                                                      "${planteModels[0]['maladies'][index]['symptomes'][ind]}"),
+                                                  Expanded(
+                                                    child: Text(
+                                                        "${planteModels[0]['maladies'][index]['symptomes'][ind]}"),
+                                                  ),
                                                 ],
                                               ),
                                             ],
@@ -208,8 +211,10 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                                                     ),
                                                   ),
                                                   5.widthBox,
-                                                  Text(
-                                                      "${planteModels[0]['maladies'][index]['prevention'][ind]}"),
+                                                  Expanded(
+                                                    child: Text(
+                                                        "${planteModels[0]['maladies'][index]['prevention'][ind]}"),
+                                                  ),
                                                 ],
                                               ),
                                             ],
@@ -249,8 +254,10 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                                                     ),
                                                   ),
                                                   5.widthBox,
-                                                  Text(
-                                                      "${planteModels[0]['maladies'][index]['traitement'][ind]}"),
+                                                  Expanded(
+                                                    child: Text(
+                                                        "${planteModels[0]['maladies'][index]['traitement'][ind]}"),
+                                                  ),
                                                 ],
                                               ),
                                             ],
@@ -269,7 +276,16 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: pickImage,
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) => const ChooseImage(),
+          ).then((value) {
+            if (value != null) {
+              imageClassification(value);
+            }
+          });
+        },
         tooltip: "prendre une image",
         child: const Icon(Icons.add_a_photo),
       ),
