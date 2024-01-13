@@ -291,15 +291,4 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
       ),
     );
   }
-
-  Future pickImage() async {
-    final ImagePicker picker = ImagePicker();
-    final XFile? pickedFile = await picker.pickImage(
-      source: ImageSource.gallery,
-    );
-    if (pickedFile != null) {
-      File image = File(pickedFile.path);
-      imageClassification(image);
-    }
-  }
 }
