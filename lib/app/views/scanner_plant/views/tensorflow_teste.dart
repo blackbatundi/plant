@@ -113,7 +113,7 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                         ),
                       ),
                       ...List.generate(
-                          planteModels[0]['maladies'].length,
+                          planteModels.length,
                           (index) => Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -127,7 +127,7 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                                       ),
                                       5.widthBox,
                                       Text(
-                                        "${planteModels[0]['maladies'][index]['nomMaladie']}",
+                                        "${planteModels[0]['nom']}",
                                         style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -135,7 +135,7 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                                     ],
                                   ),
                                   Text(
-                                    "${planteModels[0]['maladies'][index]['description']}",
+                                    "${planteModels[0]['description']}",
                                   ),
                                   10.heightBox,
                                   const Text(
@@ -151,9 +151,7 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                                     child: Column(
                                       children: [
                                         ...List.generate(
-                                          planteModels[0]['maladies'][index]
-                                                  ['symptomes']
-                                              .length,
+                                          planteModels[0]['symptomes'].length,
                                           (ind) => Column(
                                             children: [
                                               Row(
@@ -170,7 +168,7 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                                                   5.widthBox,
                                                   Expanded(
                                                     child: Text(
-                                                        "${planteModels[0]['maladies'][index]['symptomes'][ind]}"),
+                                                        "${planteModels[0]['symptomes'][ind]}"),
                                                   ),
                                                 ],
                                               ),
@@ -189,40 +187,8 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                                     ),
                                   ),
                                   10.heightBox,
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 25),
-                                    child: Column(
-                                      children: [
-                                        ...List.generate(
-                                          planteModels[0]['maladies'][index]
-                                                  ['prevention']
-                                              .length,
-                                          (ind) => Column(
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Container(
-                                                    padding:
-                                                        const EdgeInsets.all(3),
-                                                    decoration:
-                                                        const BoxDecoration(
-                                                      color: Colors.yellow,
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                  ),
-                                                  5.widthBox,
-                                                  Expanded(
-                                                    child: Text(
-                                                        "${planteModels[0]['maladies'][index]['prevention'][ind]}"),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        10.heightBox,
-                                      ],
-                                    ),
+                                  Text(
+                                    "${planteModels[0]['prevention']}",
                                   ),
                                   const Text(
                                     "Traitement",
@@ -232,40 +198,8 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                                     ),
                                   ),
                                   10.heightBox,
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 25),
-                                    child: Column(
-                                      children: [
-                                        ...List.generate(
-                                          planteModels[0]['maladies'][index]
-                                                  ['traitement']
-                                              .length,
-                                          (ind) => Column(
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Container(
-                                                    padding:
-                                                        const EdgeInsets.all(3),
-                                                    decoration:
-                                                        const BoxDecoration(
-                                                      color: Colors.green,
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                  ),
-                                                  5.widthBox,
-                                                  Expanded(
-                                                    child: Text(
-                                                        "${planteModels[0]['maladies'][index]['traitement'][ind]}"),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        10.heightBox,
-                                      ],
-                                    ),
+                                  Text(
+                                    "${planteModels[0]['traitement']}",
                                   ),
                                 ],
                               ))

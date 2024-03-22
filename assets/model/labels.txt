@@ -1,6 +1,3 @@
-0 Quinquina
-1 Eucalyptus
-2 Citronnier
-3 Citronnelle
-4 Avocatier
-5 Mangier
+0 Rouille des feuilles de thé
+1 Anthracnose
+2 Théier Dieback

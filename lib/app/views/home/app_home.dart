@@ -43,7 +43,7 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
                   physics: const NeverScrollableScrollPhysics(),
                   controller: _tabController,
                   children: [
-                    TensorFlowTest(), //hidtoric
+                    const TensorFlowTest(), //hidtoric
                     Container(), //home
                     Container(),
                     // profil

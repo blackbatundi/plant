@@ -43,6 +43,7 @@ class _ChooseImageState extends State<ChooseImage> {
                         );
                         if (pickedFile != null) {
                           image = File(pickedFile.path);
+                          // ignore: use_build_context_synchronously
                           Navigator.pop(context, image);
                         }
                       },
@@ -81,6 +82,7 @@ class _ChooseImageState extends State<ChooseImage> {
                         );
                         if (pickedFile != null) {
                           image = File(pickedFile.path);
+                          // ignore: use_build_context_synchronously
                           Navigator.pop(context, image);
                         }
                       },
