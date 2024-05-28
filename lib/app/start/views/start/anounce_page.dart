@@ -22,12 +22,10 @@ class _AnouncePageState extends State<AnouncePage> {
     {
       "image": "assets/svg/1.svg",
       "title": "Find the resultat of the disease of the plant",
-      "subtitle": "lormpusm",
     },
     {
       "image": "assets/svg/2.svg",
       "title": "Consult the historic of disease in the app",
-      "subtitle": "lormpusm",
     },
   ];
 
@@ -70,10 +68,10 @@ class _AnouncePageState extends State<AnouncePage> {
                   children: List.generate(
                     2,
                     (index) => contents(
-                        image: starts[index]['image'],
-                        indexPage: index,
-                        titleMessage: starts[index]['title'],
-                        subtitleMessage: starts[index]["subtitle"]),
+                      image: starts[index]['image'],
+                      indexPage: index,
+                      titleMessage: starts[index]['title'],
+                    ),
                   ),
                 ),
               ),
@@ -123,7 +121,6 @@ class _AnouncePageState extends State<AnouncePage> {
     int? indexPage,
     required String image,
     required String titleMessage,
-    required String subtitleMessage,
   }) {
     return Center(
       child: SingleChildScrollView(
@@ -144,7 +141,6 @@ class _AnouncePageState extends State<AnouncePage> {
             SizedBox(
               height: longSpace,
             ),
-            subtitle(subtitleMessage),
           ],
         ),
       ),
@@ -194,16 +190,6 @@ class _AnouncePageState extends State<AnouncePage> {
       style: const TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.bold,
-      ),
-    );
-  }
-
-  Widget subtitle(String subtitle) {
-    return Text(
-      subtitle,
-      textAlign: TextAlign.center,
-      style: const TextStyle(
-        color: Colors.black54,
       ),
     );
   }
