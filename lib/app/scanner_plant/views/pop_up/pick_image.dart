@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:flow_projet/app/views/scanner_plant/views/pop_up/pop_up_pick_image.dart';
+import 'package:flow_projet/app/scanner_plant/views/pop_up/pop_up_pick_image.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:velocity_x/velocity_x.dart';

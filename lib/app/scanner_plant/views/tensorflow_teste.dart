@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:flow_projet/app/views/scanner_plant/data_local/data.dart';
-import 'package:flow_projet/app/views/scanner_plant/views/pop_up/pick_image.dart';
+import 'package:flow_projet/app/scanner_plant/data_local/data.dart';
+import 'package:flow_projet/app/scanner_plant/views/pop_up/pick_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:tflite_v2/tflite_v2.dart';

@@ -1,5 +1,5 @@
 import 'package:flow_projet/app/start/shared/utils/style.dart';
-import 'package:flow_projet/app/views/scanner_plant/views/tensorflow_teste.dart';
+import 'package:flow_projet/app/scanner_plant/views/tensorflow_teste.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:animate_do/animate_do.dart';
