@@ -89,25 +89,24 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                         Text(
                           "Aucune image selectionner",
                           style: TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 16),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
+          10.heightBox,
           imageSelect
               ? Padding(
-                  padding: const EdgeInsets.all(24),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Card(
-                    child: Container(
-                      // margin: const EdgeInsets.all(10),
-                      padding: const EdgeInsets.all(10),
-                      child: Text(
-                        "${result[0]['label']} : ${result[0]['confidence'].toStringAsFixed(2)}",
-                        style: const TextStyle(
-                          color: Colors.red,
-                          fontSize: 20,
-                        ),
+                    child: Text(
+                      "${result[0]['label']}",
+                      style: const TextStyle(
+                        color: Colors.red,
+                        fontSize: 20,
                       ),
                     ),
                   ),

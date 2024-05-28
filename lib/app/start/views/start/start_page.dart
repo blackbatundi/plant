@@ -17,7 +17,7 @@ class _StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
-        systemNavigationBarColor: AppColors.SCAFFOLD_BACKGROUND_LIGHT,
+        systemNavigationBarColor: AppColors.TRANSPARENT,
         systemNavigationBarIconBrightness: Brightness.dark,
         statusBarColor: AppColors.TRANSPARENT,
         statusBarIconBrightness: Brightness.light,

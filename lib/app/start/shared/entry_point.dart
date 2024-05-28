@@ -17,7 +17,7 @@ class _PlantAppState extends State<PlantApp> {
     if (Platform.isAndroid) {
       SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(
-          systemNavigationBarColor: Colors.white,
+          systemNavigationBarColor: Colors.black,
           systemNavigationBarIconBrightness: Brightness.dark,
           statusBarColor: Colors.white,
           statusBarIconBrightness: Brightness.dark,
