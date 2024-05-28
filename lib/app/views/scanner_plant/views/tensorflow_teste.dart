@@ -8,6 +8,7 @@ import 'package:tflite_v2/tflite_v2.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class TensorFlowTest extends StatefulWidget {
+  static String routeName = "/app";
   const TensorFlowTest({super.key});
 
   @override
@@ -73,11 +74,24 @@ class _TensorFlowTestState extends State<TensorFlowTest> {
                   ),
                 )
               : Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
                   margin: const EdgeInsets.all(10),
                   child: const Opacity(
                     opacity: 0.8,
-                    child: Center(
-                      child: Text("Aucune image selectionner"),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.photo,
+                          size: 80,
+                        ),
+                        Text(
+                          "Aucune image selectionner",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600, fontSize: 16),
+                        ),
+                      ],
                     ),
                   ),
                 ),
